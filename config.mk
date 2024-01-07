@@ -7,7 +7,7 @@
 LOAD_KIND := Module
 
 # Program you're targetting. Used to determine where to deploy your files.
-PROGRAM_ID := 0100801011c3e000
+PROGRAM_ID := 01009B500007C000
 
 # Optional path to copy the final ELF to, for convenience.
 ELF_EXTRACT :=
@@ -19,8 +19,8 @@ PYTHON := python3
 NPDM_JSON := qlaunch.json
 
 # Additional C/C++ flags to use.
-C_FLAGS := 
-CXX_FLAGS := 
+C_FLAGS := -DNNSDK
+CXX_FLAGS := -DNNSDK -Wno-invalid-offsetof
 
 # AsRtld settings
 #------------------------

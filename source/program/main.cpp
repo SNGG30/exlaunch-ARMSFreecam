@@ -1,4 +1,5 @@
 #include "lib.hpp"
+#include "free_cam.hpp"
 
 /* Define hook StubCopyright. Trampoline indicates the original function should be kept. */
 /* HOOK_DEFINE_REPLACE can be used if the original function does not need to be kept. */
@@ -22,9 +23,10 @@ namespace nn::oe {
 extern "C" void exl_main(void* x0, void* x1) {
     /* Setup hooking enviroment. */
     exl::hook::Initialize();
+    free_king::free_cam::Install();
 
     /* Install the hook at the provided function pointer. Function type is checked against the callback function. */
-    StubCopyright::InstallAtFuncPtr(nn::oe::SetCopyrightVisibility);
+    //StubCopyright::InstallAtFuncPtr(nn::oe::SetCopyrightVisibility);
 
     /* Alternative install funcs: */
     /* InstallAtPtr takes an absolute address as a uintptr_t. */
